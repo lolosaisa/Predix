@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 // Supabase configuration
-const supabaseUrl = 'https://your-supabase-url.supabase.co';
+const supabaseUrl = 'supabaseUrl';
 const supabaseKey = 'your-supabase-key';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
