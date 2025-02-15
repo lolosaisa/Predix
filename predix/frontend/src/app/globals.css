@@ -29,11 +29,9 @@
 
 @layer base {
   * {
-    /* Remove the custom class and apply border directly */
-    @apply selection:bg-emerald/20 selection:text-white;
     border: 1px solid hsl(var(--border));
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
@@ -41,6 +39,17 @@
 
   html {
     @apply scroll-smooth;
+  }
+
+  ::selection {
+    background-color: rgba(52, 211, 153, 0.2); /* Emerald with 20% opacity */
+    color: white;
+  }
+}
+
+@layer utilities {
+  .selection\:bg-emerald\/20::selection {
+    background-color: rgba(52, 211, 153, 0.2);
   }
 }
 
