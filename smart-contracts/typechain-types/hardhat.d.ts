@@ -21,6 +21,18 @@ declare module "hardhat/types/runtime" {
       name: "MyContract",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MyContract__factory>;
+    getContractFactory(
+      name: "PredixPredictionMarket",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PredixPredictionMarket__factory>;
+    getContractFactory(
+      name: "PredixPolls",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PredixPolls__factory>;
+    getContractFactory(
+      name: "PredixPredictionMarket",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PredixPredictionMarket__factory>;
 
     getContractAt(
       name: "Lock",
@@ -32,6 +44,21 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.MyContract>;
+    getContractAt(
+      name: "PredixPredictionMarket",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PredixPredictionMarket>;
+    getContractAt(
+      name: "PredixPolls",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PredixPolls>;
+    getContractAt(
+      name: "PredixPredictionMarket",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PredixPredictionMarket>;
 
     deployContract(
       name: "Lock",
@@ -41,6 +68,18 @@ declare module "hardhat/types/runtime" {
       name: "MyContract",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.MyContract>;
+    deployContract(
+      name: "PredixPredictionMarket",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PredixPredictionMarket>;
+    deployContract(
+      name: "PredixPolls",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PredixPolls>;
+    deployContract(
+      name: "PredixPredictionMarket",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PredixPredictionMarket>;
 
     deployContract(
       name: "Lock",
@@ -52,6 +91,21 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.MyContract>;
+    deployContract(
+      name: "PredixPredictionMarket",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PredixPredictionMarket>;
+    deployContract(
+      name: "PredixPolls",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PredixPolls>;
+    deployContract(
+      name: "PredixPredictionMarket",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.PredixPredictionMarket>;
 
     // default types
     getContractFactory(

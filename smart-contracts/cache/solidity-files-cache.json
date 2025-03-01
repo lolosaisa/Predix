@@ -72,6 +72,78 @@
       "artifacts": [
         "MyContract"
       ]
+    },
+    "/home/loisa/Predix/predix/smart-contracts/contracts/PredixPoll.sol": {
+      "lastModificationDate": 1740324067245,
+      "contentHash": "4faf5a2fed47b0f2d277e19381b8b0f0",
+      "sourceName": "contracts/PredixPoll.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "PredixPolls"
+      ]
+    },
+    "/home/loisa/Predix/predix/smart-contracts/contracts/predixMarkets.sol": {
+      "lastModificationDate": 1740769527591,
+      "contentHash": "d545998fe839bdf483623e9823498cd8",
+      "sourceName": "contracts/predixMarkets.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "PredixPredictionMarket"
+      ]
     }
   }
 }

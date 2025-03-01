@@ -3,36 +3,42 @@ import "@nomicfoundation/hardhat-toolbox";
 import "@typechain/hardhat";
 import "@nomicfoundation/hardhat-ethers";
 
-
 require('dotenv').config();
+//debugging lines
+console.log("Etherscan API Key:", process.env.ETHERSCAN_API_KEY);
+console.log("Wallet Key:", process.env.WALLET_KEY);
+console.log("Alchemy API Key:", process.env.ALCHEMY_API_KEY);
+
 
 const config: HardhatUserConfig = {
   solidity: "0.8.28",
-  //enable automatc typescript for smart contracts
   typechain: {
     outDir: "typechain-types",
-    target: "ethers-v5",
-   },
+    target: "ethers-v6",
+  },
   networks: {
-    //ethereums sepolia testnet
+    // Ethereum Sepolia Testnet
     sepolia: {
-      url: `https://eth-sepolia.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
-      accounts: [`0x${process.env.WALLET_KEY}`],  // Ensure your private key has 0x prefix
-      gasPrice: 1000000000, 
+      url: `https://eth-sepolia.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`, // Alchemy API URL
+      accounts: [process.env.WALLET_KEY as string], // Private key of the deployer wallet
+      gasPrice: 1000000000, // Optional: Set gas price
     },
+    // Lisk Sepolia Testnet
     "lisk-sepolia": {
-      url: 'https://rpc.sepolia-api.lisk.com',
-      accounts: [`0x${process.env.WALLET_KEY}`],  // Ensure your private key has 0x prefix
-      gasPrice: 1000000000, // Only use if required by the Lisk network
+      url: "https://rpc.sepolia-api.lisk.com",
+      accounts: [process.env.WALLET_KEY as string], // Private key of the deployer wallet
+      gasPrice: 1000000000, // Optional: Set gas price
     },
   },
-  //etherscan for hardhat
+  // Hardhat expects etherscan here, even if you're using Blockscout.
   etherscan: {
+    // Ethereum Sepolia Etherscan configuration
     apiKey: {
-      sepolia: process.env.ETHERSCAN_API_KEY as string, //etherscan api key for sepolia
-      "lisk-sepolia": "123",
+      sepolia: process.env.ETHERSCAN_API_KEY as string, // Etherscan API key for Ethereum Sepolia
+      "lisk-sepolia": "123", // Placeholder API key for Lisk Blockscout
     },
     customChains: [
+      // Lisk Sepolia Blockscout configuration
       {
         network: "lisk-sepolia",
         chainId: 4202,
