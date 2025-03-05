@@ -14,7 +14,7 @@ const config: HardhatUserConfig = {
   networks: {
     // Ethereum Sepolia Testnet with updated Alchemy URL
     sepolia: {
-      url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`, // Updated Alchemy API URL
+      url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
       accounts: [process.env.WALLET_KEY as string], // Private key of the deployer wallet
       gasPrice: 1000000000, // Optional: Set gas price
     },
