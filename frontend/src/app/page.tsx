@@ -1,5 +1,5 @@
 
-import { Sidebar } from "@/components/Sidebar";
+import { Sidebar } from "@/components/SideBar";
 import { SearchBar } from "@/components/SearchBar";
 import { PredictionCard } from "@/components/PredictionCard";
 import { PollCard } from "@/components/PollCard";
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Plus, Filter } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/useMobile";
 import { useAuth } from "@/contexts/AuthContext";
 import { useWallet } from "@/contexts/WalletContext";
 
