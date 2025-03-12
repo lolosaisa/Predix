@@ -16,7 +16,7 @@ import { X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useQueryClient } from "@tanstack/react-query";
 import { useToast } from "@/components/ui/use-toast";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 
 const pollSchema = z.object({
   question: z.string().min(10, "Question must be at least 10 characters"),
@@ -117,7 +117,6 @@ export const CreateForm = () => {
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to create poll. Please try again.",
-        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -162,7 +161,6 @@ export const CreateForm = () => {
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to create prediction. Please try again.",
-        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
