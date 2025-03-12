@@ -11,8 +11,8 @@ import { Plus, Filter } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useIsMobile } from "@/hooks/useMobile";
-import { useAuth } from "@/contexts/AuthContext";
-import { useWallet } from "@/contexts/WalletContext";
+import { useAuth } from "@/context/AuthContext";
+import { useWallet } from "@/context/WalletContext";
 
 const categories = ["All", "Football", "Politics", "Crypto", "Technology"];
 
@@ -23,8 +23,9 @@ const fetchPredictions = async () => {
     .order('created_at', { ascending: false });
   
   if (error) throw error;
+  //explicitly defined the type of predictions as {status: string} we can also use predictions: string
   
-  return (data || []).map(prediction => ({
+  return (data || []).map((prediction: { status: string; }) => ({
     ...prediction,
     status: prediction.status as 'active' | 'resolved' | 'cancelled'
   }));
@@ -110,7 +111,7 @@ const Index = () => {
 
   const filteredPredictions = selectedCategory === "All" 
     ? predictions 
-    : predictions.filter(p => p.category === selectedCategory);
+    : predictions.filter((p: { category: string; }) => p.category === selectedCategory);
 
   const filteredPolls = selectedCategory === "All"
     ? polls
@@ -214,7 +215,8 @@ const Index = () => {
               ) : filteredPredictions.length === 0 ? (
                 <p className="text-white col-span-full text-center py-8">No predictions found in this category.</p>
               ) : (
-                filteredPredictions.map((prediction) => (
+                //explicitly defined the type of predictions as {status: string} we can also use predictions: string // string was not defined in the cardprps so i used any.
+                filteredPredictions.map((prediction: any) => (
                   <PredictionCard key={prediction.id} {...prediction} />
                 ))
               )}
